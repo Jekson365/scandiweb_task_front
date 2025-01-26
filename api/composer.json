@@ -1,0 +1,17 @@
+{
+    "name": "jeko/new",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jeko",
+            "email": "jeko.erg@gamil.com"
+        }
+    ],
+    "require": {
+        "webonyx/graphql-php": "^15.19"
+    }
+}
