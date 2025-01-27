@@ -3,9 +3,7 @@ import "../../styles/productpage.scss";
 import { useQuery } from "@apollo/client";
 import ReactHtmlParser from "html-react-parser";
 
-import {
-  GET_PROD_BY_CAT,
-} from "../../graphql/queries/productQueires";
+import { GET_PROD_BY_CAT } from "../../graphql/queries/productQueires";
 import Size from "./Size";
 import Color from "./Color";
 import Capacity from "./Capacity";
@@ -17,9 +15,9 @@ import ProductImages from "./ProductImages";
 
 export const CartContext = createContext<any>({});
 
-const Productpage = () => { 
+const Productpage = () => {
   const path = window.location.pathname;
-  const prodId = path.split('/').filter(Boolean).pop();
+  const prodId = path.split("/").filter(Boolean).pop();
   const { addItem, items, updateItemQuantity } = useCart();
   const [validProps, setValidProps] = useState(false);
   const [cartObject, setCartObject] = useState<any>({
@@ -101,6 +99,9 @@ const Productpage = () => {
         <CartContext.Provider value={{ cartObject, setCartObject }}>
           <div className="col col-2">
             <div className="col-2-inner-cover">
+              <div className="row price">
+                <div className="title">{cartObject.name}</div>
+              </div>
               <div
                 className="product-content"
                 style={{ gap: "10px !important" }}
@@ -108,9 +109,7 @@ const Productpage = () => {
                 {!cartObject.inStock ? (
                   <>
                     <div className="row">
-                      <div className="out-of-stock-fixed">
-                        out of stock
-                      </div>
+                      <div className="out-of-stock-fixed">out of stock</div>
                     </div>
                   </>
                 ) : null}
@@ -157,7 +156,7 @@ const Productpage = () => {
                   ) : null}
                   <div className="desc" data-testid="product-description">
                     {ReactHtmlParser(
-                      cartObject.description.replace(/\\n/g, '')
+                      cartObject.description.replace(/\\n/g, "")
                     )}
                   </div>
                 </div>

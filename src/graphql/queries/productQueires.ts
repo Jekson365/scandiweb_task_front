@@ -76,6 +76,7 @@ export const GET_CURRENT_PRODUCT = gql`
       id
       name
       description
+      id_name
       category {
         name
       }
