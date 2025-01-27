@@ -6,7 +6,6 @@ import ReactHtmlParser from "html-react-parser";
 import {
   GET_PROD_BY_CAT,
 } from "../../graphql/queries/productQueires";
-import { useSearchParams } from "react-router-dom";
 import Size from "./Size";
 import Color from "./Color";
 import Capacity from "./Capacity";
@@ -18,10 +17,11 @@ import ProductImages from "./ProductImages";
 
 export const CartContext = createContext<any>({});
 
-const Productpage = () => {
+const Productpage = () => { 
+  const path = window.location.pathname;
+  const prodId = path.split('/').filter(Boolean).pop();
   const { addItem, items, updateItemQuantity } = useCart();
   const [validProps, setValidProps] = useState(false);
-  const [searchParams] = useSearchParams();
   const [cartObject, setCartObject] = useState<any>({
     id: null,
     name: "",
@@ -33,7 +33,7 @@ const Productpage = () => {
     gallery: [],
   });
   const { loading, error, data } = useQuery(GET_PROD_BY_CAT, {
-    variables: { id: searchParams.get("id"), cat: "" },
+    variables: { id: prodId, cat: "" },
   });
 
   useEffect(() => {

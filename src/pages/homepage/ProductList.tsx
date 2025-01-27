@@ -4,22 +4,19 @@ import { useQuery } from "@apollo/client";
 import {
   GET_PROD_BY_CAT,
 } from "../../graphql/queries/productQueires";
-import { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 
 function ProductList() {
-  const [searchParams] = useSearchParams()
+  const path = window.location.pathname;
+  const lastSegment = path.split('/').filter(Boolean).pop();
+
   const { loading, data } = useQuery(GET_PROD_BY_CAT,{
-    variables: { cat: searchParams.get("query") }
+    variables: { cat: lastSegment }
   });
-  useEffect(()=> {
-    console.log(data)
-  },[data])
   return (
     <>
       <div className="product-list-cover">
         {loading ? (
-          <>loading...</>
+        <>loading...</>
         ) : (
           <>
             {data &&

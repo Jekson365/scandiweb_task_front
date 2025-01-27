@@ -73,7 +73,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
             </div>
           </>
         ) : null}
-        <Link to={`product/?id=${item.id}`}>
+        <Link to={`/product/${item.id}`}>
           <div
             className={`image-cover ${item.inStock ? "" : "out-stock-image"}`}
             style={{

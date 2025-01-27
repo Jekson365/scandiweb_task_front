@@ -21,7 +21,7 @@ export const Header = () => {
           <div className="col col-1">
             <div className="items">
               <a
-                href="/?query=clothes"
+                href="/clothes"
                 data-testid={
                   location === "clothes"
                     ? "active-category-link"
@@ -32,7 +32,7 @@ export const Header = () => {
                 Clothes
               </a>
               <a
-                href="/?query=tech"
+                href="/tech"
                 data-testid={
                   location === "tech" ? "active-category-link" : "category-link"
                 }
@@ -41,7 +41,7 @@ export const Header = () => {
                 Tech
               </a>
               <a
-                href="/?query=all"
+                href="/all"
                 data-testid={
                   location === "all" ? "active-category-link" : "category-link"
                 }

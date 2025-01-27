@@ -2,7 +2,81 @@
   "hash": "082348bc",
   "configHash": "903e9abf",
   "lockfileHash": "4c9a04ab",
-  "browserHash": "657dd460",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "05ab3d4e",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "f3a113f5",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "06abfd0f",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "9e1869a4",
+      "needsInterop": true
+    },
+    "@apollo/client": {
+      "src": "../../node_modules/@apollo/client/index.js",
+      "file": "@apollo_client.js",
+      "fileHash": "eb5eab81",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "1728df85",
+      "needsInterop": false
+    },
+    "react-use-cart": {
+      "src": "../../node_modules/react-use-cart/dist/react-use-cart.esm.js",
+      "file": "react-use-cart.js",
+      "fileHash": "ce1308c6",
+      "needsInterop": false
+    },
+    "html-react-parser": {
+      "src": "../../node_modules/html-react-parser/esm/index.mjs",
+      "file": "html-react-parser.js",
+      "fileHash": "39811ffb",
+      "needsInterop": false
+    },
+    "react-uuid": {
+      "src": "../../node_modules/react-uuid/uuid.js",
+      "file": "react-uuid.js",
+      "fileHash": "18518e7b",
+      "needsInterop": true
+    },
+    "swiper/react": {
+      "src": "../../node_modules/swiper/swiper-react.mjs",
+      "file": "swiper_react.js",
+      "fileHash": "05d7f2ae",
+      "needsInterop": false
+    },
+    "swiper/modules": {
+      "src": "../../node_modules/swiper/modules/index.mjs",
+      "file": "swiper_modules.js",
+      "fileHash": "a07a8afa",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-FE27OTRZ": {
+      "file": "chunk-FE27OTRZ.js"
+    },
+    "chunk-IPYILTUR": {
+      "file": "chunk-IPYILTUR.js"
+    },
+    "chunk-4SFRHSJ3": {
+      "file": "chunk-4SFRHSJ3.js"
+    },
+    "chunk-EQCVQC35": {
+      "file": "chunk-EQCVQC35.js"
+    }
+  }
 }
