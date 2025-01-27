@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Attribute, CurrentProduct, Item } from "../../types/types";
 import { CartContext } from "./Productpage";
 
@@ -19,7 +19,9 @@ const Size = ({ attr }: { attr: CurrentProduct }) => {
 
     setCartObject({ ...cartObject, attributes: updatedAttributes });
   };
-
+  useEffect(()=> {
+    console.log(attr.items)
+  },[])
   return (
     <>
       <div className="row sizes">
