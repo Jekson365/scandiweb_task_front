@@ -3,6 +3,7 @@ export type Product = {
   attributes: Product;
   name: string;
   price: Price;
+  id_name: string;
   img: string;
   inStock:boolean;
   gallery: string[];

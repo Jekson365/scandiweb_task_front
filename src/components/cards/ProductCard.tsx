@@ -44,7 +44,8 @@ const ProductCard = ({ item }: ProductCardProps) => {
     if (cartObject.inStock) {
       let itemsExits = false;
 
-      items.forEach((e: any) => {
+      items.forEach((e: any) => {  id_name: string;
+
         if (
           JSON.stringify(e.attributes) == JSON.stringify(cartObject.attributes)
         ) {
@@ -60,7 +61,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
   };
   return (
     <>
-      <div className="product-card" data-testid={`product-${item.name}`}>
+      <div className="product-card" data-testid={`product-${item.id_name}`}>
         {!item.inStock ? (
           <>
             <div className="out-of-stock">out of stock</div>
