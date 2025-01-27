@@ -21,7 +21,6 @@ const ProductCard = ({ item }: ProductCardProps) => {
     if (item && item.attributes) {
       const { name, price, id, attributes, gallery, inStock } = item;
 
-
       const transformedAttributes = attributes.map((attribute: Attribute) => ({
         ...attribute,
         items: attribute.items.map((currentItem: Item, index: number) => ({
@@ -80,11 +79,11 @@ const ProductCard = ({ item }: ProductCardProps) => {
               backgroundImage: `url('${item.gallery[0]}')`,
             }}
           ></div>
-          <div className="product-content">
-            <p className="title">{item.name}</p>
-            <p className="price">{item.price.amount}$</p>
-          </div>
         </Link>
+        <h3 className="title" style={{ marginTop: "40px" }}>
+          {item.name}
+        </h3>
+        <p className="price">{item.price.amount}$</p>
       </div>
     </>
   );
