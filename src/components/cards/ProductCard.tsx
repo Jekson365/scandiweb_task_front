@@ -44,8 +44,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
     if (cartObject.inStock) {
       let itemsExits = false;
 
-      items.forEach((e: any) => {  id_name: string;
-
+      items.forEach((e: any) => {
         if (
           JSON.stringify(e.attributes) == JSON.stringify(cartObject.attributes)
         ) {
