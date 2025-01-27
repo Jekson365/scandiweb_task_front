@@ -65,7 +65,10 @@ function Cart({ open }: { open: boolean }) {
   }, [items]);
   return (
     <>
-      <div className={`cart ${open ? null : "d-none"}`}>
+      <div
+        data-testid="cart-overlay"
+        className={`cart ${open ? null : "d-none"}`}
+      >
         <h3>
           My Bag <span data-testid="cart-total">{cartQuantity}</span>{" "}
           {cartQuantity > 1 ? "items" : "item"}
@@ -88,7 +91,7 @@ function Cart({ open }: { open: boolean }) {
                             <>
                               {attr.id_name === "Size" ? (
                                 <>
-                                <SizeProps attr={attr} />
+                                  <SizeProps attr={attr} />
                                 </>
                               ) : attr.id_name === "Color" ? (
                                 <>
