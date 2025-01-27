@@ -39,6 +39,7 @@ export const GET_PROD_BY_CAT = gql`
     productsByCat(catName: $cat, id: $id) {
       id
       name
+      id_name
       inStock
       gallery
       description

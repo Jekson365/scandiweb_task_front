@@ -28,7 +28,7 @@ export const Header = () => {
                     ? "active-category-link"
                     : "category-link"
                 }
-                className={location === "clothes" ? "selected-page" : ""}
+                className={location === "clothes" || location === undefined ? "selected-page" : ""}
               >
                 Clothes
               </a>
