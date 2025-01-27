@@ -88,7 +88,7 @@ function Cart({ open }: { open: boolean }) {
                             <>
                               {attr.id_name === "Size" ? (
                                 <>
-                                  <SizeProps attr={attr} />
+                                <SizeProps attr={attr} />
                                 </>
                               ) : attr.id_name === "Color" ? (
                                 <>

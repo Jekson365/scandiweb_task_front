@@ -10,6 +10,8 @@ const CapacityProps = ({ attr }: { attr: Attribute }) => {
             return (
               <>
                 <div
+                data-testid={`${itemProps.isSelected ? `cart-item-attribute-${itemProps.id_name}-selected` 
+                  : `cart-item-attribute-${itemProps.id_name}`}`}
                   className={`min-prop-item capacity-item ${
                     itemProps.isSelected ? "selected-capacity" : ""
                   }`}

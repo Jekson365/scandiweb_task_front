@@ -10,6 +10,8 @@ function ColorProps({ attr }: { attr: Attribute }) {
             return (
               <>
                 <div
+                data-testid={`${itemProps.isSelected ? `cart-item-attribute-${itemProps.id_name}-selected` 
+                  : `cart-item-attribute-${itemProps.id_name}`}`}
                   className={`min-prop-item color-item ${
                     itemProps.isSelected ? "selected-color" : ""
                   }`}

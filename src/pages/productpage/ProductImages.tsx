@@ -14,8 +14,10 @@ function ProductImages({ product }: { product: CurrentProduct }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>
-      <div className="slider-container col col-1"
-        style={{gap:"10px"}}
+      <div
+        className="slider-container col col-1"
+        data-testid="product-gallery"
+        style={{ gap: "10px" }}
       >
         <div className="con con-1">
           <Swiper
@@ -33,9 +35,7 @@ function ProductImages({ product }: { product: CurrentProduct }) {
             className="mySwiper"
           >
             {product.gallery.map((path: string, index) => (
-              <SwiperSlide key={index}
-                style={{height:"120px !important"}}
-              >
+              <SwiperSlide key={index} style={{ height: "120px !important" }}>
                 <div className="cover-slider-image">
                   <img src={path} />
                 </div>
@@ -61,13 +61,15 @@ function ProductImages({ product }: { product: CurrentProduct }) {
                   alignItems: "center",
                 }}
               >
-                <img 
-                style={{
-                    width:"100%",
-                    height:"100%",
-                    objectFit:"cover"
-                }}
-                className="" src={path} />
+                <img
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                  className=""
+                  src={path}
+                />
               </SwiperSlide>
             ))}
           </Swiper>

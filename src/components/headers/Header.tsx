@@ -1,18 +1,19 @@
 import "../../styles/components.scss";
 import centerIcon from "../../../assets/a-logo.png";
 import cartIcon from "../../../assets/Empty Cart.png";
-import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Cart from "../cart/Cart";
 import { useCartContext } from "../providers/CartProvider";
 
 export const Header = () => {
-  const [searchParams] = useSearchParams();
   const { cartQuantity } = useCartContext()!;
   const { open, setOpen } = useCartContext()!;
-  const [location, setLocation] = useState<string | null>("");
+  const [location, setLocation] = useState<string | undefined>("");
+  const path = window.location.pathname;
+  const lastSegment = path.split('/').filter(Boolean).pop();
+
   useEffect(() => {
-    setLocation(searchParams.get("query"));
+    setLocation(lastSegment);
   }, []);
   return (
     <>
@@ -58,12 +59,12 @@ export const Header = () => {
             <Cart open={open} />
             <img
               src={cartIcon}
-              data-testid="cart-btn"
+              data-testid='cart-btn'
               onClick={() => setOpen(!open)}
             />
             {cartQuantity > 0 ? (
               <>
-                <div className="counter">{cartQuantity}</div>
+                <div className="counter" data-testid="cart-total" >{cartQuantity}</div>
               </>
             ) : null}
           </div>

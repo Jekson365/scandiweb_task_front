@@ -10,6 +10,7 @@ function OtherProps({ attr }: { attr: Attribute }) {
             return (
               <>
                 <div
+                
                   className={`radio-box cart-radio-item ${
                     item.isSelected ? "selected-radio-box" : null
                   }`}
