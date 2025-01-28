@@ -26,7 +26,7 @@ const Color = ({ attr }: { attr: CurrentProduct }) => {
     <>
       <div className="row colors">
         <div className="title">Color:</div>
-        <div className="colors-container">
+        <div className="colors-container" data-testid={`product-attribute-${attr.id_name}`}>
           {attr.items.map((item: Item) => {
             return (
               <div

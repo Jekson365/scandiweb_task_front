@@ -62,6 +62,7 @@ export type CartItem = {
 };
 export type Item = {
   value: string;
+  id: number;
   inStock: boolean;
   display_value: string;
   id_name: string;

@@ -26,12 +26,11 @@ const Size = ({ attr }: { attr: CurrentProduct }) => {
     <>
       <div className="row sizes">
         <div className="title">Size:</div>
-        <div className="sizes-container">
+        <div className="sizes-container" data-testid={`product-attribute-${attr.id_name}`}>
           {attr.items.map((item: Item) => {
             return (
               <>
                 <div
-                  data-testid={`product-attribute-${item.id_name}`}
                   className={`size ${item.isSelected ? "selected-size" : ""}`}
                   onClick={() => handleSelect(item)}
                 >
