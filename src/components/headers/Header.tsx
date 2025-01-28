@@ -10,7 +10,7 @@ export const Header = () => {
   const { open, setOpen } = useCartContext()!;
   const [location, setLocation] = useState<string | undefined>("");
   const path = window.location.pathname;
-  const lastSegment = path.split('/').filter(Boolean).pop();
+  const lastSegment = path.split("/").filter(Boolean).pop();
 
   useEffect(() => {
     setLocation(lastSegment);
@@ -24,11 +24,15 @@ export const Header = () => {
               <a
                 href="/clothes"
                 data-testid={
-                  location === "clothes"
+                  location === "clothes" || location === undefined
                     ? "active-category-link"
                     : "category-link"
                 }
-                className={location === "clothes" || location === undefined ? "selected-page" : ""}
+                className={
+                  location === "clothes" || location === undefined
+                    ? "selected-page"
+                    : ""
+                }
               >
                 Clothes
               </a>
@@ -59,12 +63,14 @@ export const Header = () => {
             <Cart open={open} />
             <img
               src={cartIcon}
-              data-testid='cart-btn'
+              data-testid="cart-btn"
               onClick={() => setOpen(!open)}
             />
             {cartQuantity > 0 ? (
               <>
-                <div className="counter" data-testid="cart-total" >{cartQuantity}</div>
+                <div className="counter" data-testid="cart-total">
+                  {cartQuantity}
+                </div>
               </>
             ) : null}
           </div>

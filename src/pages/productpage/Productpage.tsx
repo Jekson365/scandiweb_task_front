@@ -18,7 +18,7 @@ export const CartContext = createContext<any>({});
 
 const Productpage = () => {
   const path = window.location.pathname;
-  const { open, setOpen } = useCartContext()!;
+  const { setOpen } = useCartContext()!;
   const prodId = path.split("/").filter(Boolean).pop();
   const { addItem, items, updateItemQuantity } = useCart();
   const [validProps, setValidProps] = useState(false);

@@ -8,7 +8,7 @@ import uuid from "react-uuid";
 import { useCartContext } from "../providers/CartProvider";
 
 const ProductCard = ({ item }: ProductCardProps) => {
-  const { open, setOpen } = useCartContext()!;
+  const { setOpen } = useCartContext()!;
   const { updateItemQuantity, items, addItem } = useCart();
   const [cartObject, setCartObject] = useState<any>({
     id: null,
