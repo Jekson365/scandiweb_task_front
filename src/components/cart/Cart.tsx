@@ -141,9 +141,13 @@ function Cart({ open }: { open: boolean }) {
           <h3>{total}$</h3>
         </div>
         <div className="mt-medium" style={{ width: "100%" }}>
-          <div className="order-button" onClick={handleOrder}>
+        <button
+            className={`order-button ${total == 0 ? "add-cart-gray" : null}`}
+            onClick={handleOrder}
+            disabled={total == 0}
+          >
             PLACE ORDER
-          </div>
+          </button>
         </div>
       </div>
     </>

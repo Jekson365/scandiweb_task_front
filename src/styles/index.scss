@@ -13,28 +13,28 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 }
-.swiper-button-next::after, .swiper-button-prev::after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
   content: "";
 }
 .swiper-button-prev {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 16px 16px;
-  width:30px;
-  height:30px;
+  width: 30px;
+  height: 30px;
   background-color: black;
-  background-image: url('../../assets/arrow-left-svgrepo-com.svg');
+  background-image: url("../../assets/arrow-left-svgrepo-com.svg");
 }
 .swiper-button-next {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 16px 16px;
-  width:30px;
-  height:30px;
+  width: 30px;
+  height: 30px;
   background-color: black;
-  background-image: url('../../assets/arrow-left-svgrepo-com\ \(1\).svg');
+  background-image: url("../../assets/arrow-left-svgrepo-com\ \(1\).svg");
 }
-
 
 .p-r {
   position: relative;
@@ -71,6 +71,7 @@ a {
 .order-button {
   width: 100%;
   height: 70px;
+  border: 0;
   background-color: $color-green;
   display: flex;
   align-items: center;
