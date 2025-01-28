@@ -30,7 +30,7 @@ const Capacity = ({ attr }: { attr: CurrentProduct }) => {
               return (
                 <>
                   <div
-                  data-testid={`product-attribute-${item.id_name}`} 
+                  data-testid={`product-attribute-capacity-${item.id_name}`} 
                     className={`size ${
                       item.isSelected ? "selected-capacity" : ""
                     }`}
