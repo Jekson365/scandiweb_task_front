@@ -11,7 +11,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_CART_ITEM } from "../../graphql/mutations/productMutations";
 
 function Cart({ open }: { open: boolean }) {
-  const [addCartItem] = useMutation(ADD_CART_ITEM);
+  const [createCartItem] = useMutation(ADD_CART_ITEM);
   const { updateItemQuantity, items, emptyCart } = useCart();
   const [total, setTotal] = useState(0);
   const { cartQuantity } = useCartContext()!;
@@ -42,7 +42,7 @@ function Cart({ open }: { open: boolean }) {
       };
     });
     try {
-      addCartItem({
+      createCartItem({
         variables: {
           items: modified,
         },
