@@ -147,6 +147,7 @@ const Productpage = () => {
                         className={`custom-button ${
                           !validProps ? "add-cart-gray" : ""
                         }`}
+                        disabled={validProps ? false : true}
                         data-testid="add-to-cart"
                         onClick={handleCartItems}
                       >
