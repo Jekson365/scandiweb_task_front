@@ -5,8 +5,10 @@ import { useCart } from "react-use-cart";
 import { useEffect, useState } from "react";
 import { Attribute, Item } from "../../types/types";
 import uuid from "react-uuid";
+import { useCartContext } from "../providers/CartProvider";
 
 const ProductCard = ({ item }: ProductCardProps) => {
+  const { open, setOpen } = useCartContext()!;
   const { updateItemQuantity, items, addItem } = useCart();
   const [cartObject, setCartObject] = useState<any>({
     id: null,
@@ -42,7 +44,8 @@ const ProductCard = ({ item }: ProductCardProps) => {
   const handleCart = () => {
     if (cartObject.inStock) {
       let itemsExits = false;
-
+      setOpen(true);
+      
       items.forEach((e: any) => {
         if (
           JSON.stringify(e.attributes) == JSON.stringify(cartObject.attributes)
@@ -51,7 +54,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
           itemsExits = true;
         }
       });
-
+      
       if (!itemsExits) {
         addItem({ ...cartObject, id: uuid() });
       }

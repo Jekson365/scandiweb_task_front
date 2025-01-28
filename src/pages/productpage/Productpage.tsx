@@ -12,11 +12,13 @@ import { createContext, useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 import uuid from "react-uuid";
 import ProductImages from "./ProductImages";
+import { useCartContext } from "../../components/providers/CartProvider";
 
 export const CartContext = createContext<any>({});
 
 const Productpage = () => {
   const path = window.location.pathname;
+  const { open, setOpen } = useCartContext()!;
   const prodId = path.split("/").filter(Boolean).pop();
   const { addItem, items, updateItemQuantity } = useCart();
   const [validProps, setValidProps] = useState(false);
@@ -75,6 +77,7 @@ const Productpage = () => {
   const handleCartItems = () => {
     if (validProps) {
       let itemExists = false;
+      setOpen(true)
       items.forEach((e: any) => {
         if (
           JSON.stringify(e.attributes) === JSON.stringify(cartObject.attributes)
