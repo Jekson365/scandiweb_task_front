@@ -1,13 +1,20 @@
 export type Product = {
-  map(arg0: (attribute: Attribute) => { items: { isSelected: boolean; value: string; display_value: string; id_name: string; }[]; id: Number; name: string; id_name: string; type: string; __typename: string; }): unknown;
-  attributes: Product;
-  name: string;
-  price: Price;
-  id_name: string;
-  img: string;
-  inStock:boolean;
-  gallery: string[];
   id: number;
+  name: string;
+  id_name: string;
+  inStock: boolean;
+  gallery: string[];
+  attributes: Attribute[];
+  price: Price;
+  img: string;
+};
+
+export type Attribute = {
+  id: number;
+  name: string;
+  id_name: string;
+  type: string;
+  items: Item[];
 };
 
 export type Price = {
@@ -21,17 +28,16 @@ export type Currency = {
   symbol: string;
 };
 
-
 export type CartProduct = {
   id: string;
   name: string;
   quantity: Number;
-  price: Price,
+  price: Price;
   itemTotal: any;
   items: any[];
   gallery: string[];
-  attributes: Attribute[]
-}
+  attributes: Attribute[];
+};
 
 export type CurrentProduct = {
   quantity: number;
@@ -44,14 +50,6 @@ export type CurrentProduct = {
   items: Item[] | any;
   attributes: Attribute[];
 };
-export type Attribute = {
-  id: Number;
-  name: string;
-  id_name: string;
-  type: string;
-  items: Item[];
-  __typename: string
-};
 export type CartItem = {
   id: string;
   name: string;
@@ -61,12 +59,11 @@ export type CartItem = {
   gallery: string[];
 };
 export type Item = {
-  value: string;
   id: number;
-  inStock: boolean;
+  value: string;
   display_value: string;
   id_name: string;
-  isSelected: boolean;
+  isSelected: boolean | undefined;
 };
 export type Category = {
   name: string;

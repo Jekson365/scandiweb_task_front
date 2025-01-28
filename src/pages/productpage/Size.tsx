@@ -1,27 +1,8 @@
-import { useContext, useEffect } from "react";
-import { Attribute, CurrentProduct, Item } from "../../types/types";
-import { CartContext } from "./Productpage";
+import { CurrentProduct, Item } from "../../types/types";
+import useAttrSelector from "../../helpers/useAttrSelector";
 
 const Size = ({ attr }: { attr: CurrentProduct }) => {
-  const { cartObject, setCartObject } = useContext(CartContext);
-  const handleSelect = (item: Item) => {
-    const updatedAttributes = cartObject.attributes.map(
-      (attribute: Attribute) => {
-        if (attribute.id === attr.id && attribute.id_name === "Size") {
-          const updatedItems = attribute.items.map((i: Item) => {
-            return { ...i, isSelected: i.id_name === item.id_name };
-          });
-          return { ...attribute, items: updatedItems };
-        }
-        return attribute;
-      }
-    );
-
-    setCartObject({ ...cartObject, attributes: updatedAttributes });
-  };
-  useEffect(() => {
-    console.log(attr.items);
-  }, []);
+  const { handleSelect } = useAttrSelector({ attr: attr, selector: "Size" });
   return (
     <>
       <div className="row sizes">

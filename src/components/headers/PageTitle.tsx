@@ -1,7 +1,13 @@
-const PageTitle = (props: any) => {
+import React from "react";
+
+type PageTitle = {
+  title?: string;
+};
+
+const PageTitle: React.FC<PageTitle> = ({ title }) => {
   return (
     <>
-      <div className="header-title">{props.title}</div>
+      <div className="header-title">{title || "clothes"}</div>
     </>
   );
 };

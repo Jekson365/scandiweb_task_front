@@ -7,17 +7,8 @@ import ColorProps from "./props/ColorProps";
 import CapacityProps from "./props/CapacityProps";
 import OtherProps from "./props/OtherProps";
 import { useCartContext } from "../providers/CartProvider";
-import { gql, useMutation } from "@apollo/client";
-
-const ADD_CART_ITEM = gql`
-  mutation CartItem($items: [CartItemInput!]!) {
-    createCartItem(items: $items) {
-      product_id
-      attributes
-      amount
-    }
-  }
-`;
+import { useMutation } from "@apollo/client";
+import { ADD_CART_ITEM } from "../../graphql/mutations/productMutations";
 
 function Cart({ open }: { open: boolean }) {
   const [addCartItem] = useMutation(ADD_CART_ITEM);
@@ -34,7 +25,8 @@ function Cart({ open }: { open: boolean }) {
   useEffect(() => {
     return setTotal(
       items.reduce(
-        (total: number, item: any) => total + item.price.amount * item.quantity,
+        (total: number, item: CartItem | any) =>
+          total + item.price.amount * item.quantity,
         0
       )
     );
@@ -75,7 +67,7 @@ function Cart({ open }: { open: boolean }) {
         </h3>
         <div className="cart-items-list col mt-medium">
           {items &&
-            items.map((item: any) => {
+            items.map((item: CartItem | any) => {
               return (
                 <>
                   <div className="row p-medium">

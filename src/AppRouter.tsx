@@ -11,7 +11,7 @@ const AppRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to="/clothes" />, // Redirect to /clothes
+        element: <Navigate to="/clothes" />,
       },
       {
         path: "/:path",

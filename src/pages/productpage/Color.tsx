@@ -1,33 +1,20 @@
-import { useContext } from "react";
-import { Attribute, CurrentProduct, Item } from "../../types/types";
-import { CartContext } from "./Productpage";
+import { CurrentProduct, Item } from "../../types/types";
+import useAttrSelector from "../../helpers/useAttrSelector";
 
 const Color = ({ attr }: { attr: CurrentProduct }) => {
-  const { cartObject, setCartObject } = useContext(CartContext);
-  const handleSelect = (item: Item) => {
-    const updatedAttributes = cartObject.attributes.map(
-      (attribute: Attribute) => {
-        if (attribute.id === attr.id && attribute.id_name === "Color") {
-          const updatedItems = attribute.items.map((i: Item) => {
-            return { ...i, isSelected: i.id_name === item.id_name };
-          });
-          return { ...attribute, items: updatedItems };
-        }
-        return attribute;
-      }
-    );
-
-    setCartObject({ ...cartObject, attributes: updatedAttributes });
-  };
+  const { handleSelect } = useAttrSelector({ attr: attr, selector: "Color" });
   return (
     <>
       <div className="row colors">
         <div className="title">Color:</div>
-        <div className="colors-container" data-testid={`product-attribute-${attr.id_name.toLocaleLowerCase()}`}>
+        <div
+          className="colors-container"
+          data-testid={`product-attribute-${attr.id_name.toLocaleLowerCase()}`}
+        >
           {attr.items.map((item: Item) => {
             return (
               <div
-              data-testid={`product-attribute-color-${item.id_name}`} 
+                data-testid={`product-attribute-color-${item.id_name}`}
                 className={`color c-1 ${
                   item.isSelected ? "selected-color" : ""
                 }`}

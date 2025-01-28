@@ -8,12 +8,15 @@ interface CartContextValue {
   cartItems: CurrentProduct[];
   setCartItems: React.Dispatch<React.SetStateAction<CurrentProduct[]>>;
   cartQuantity: number;
+  lastSegment: string | undefined;
 }
 
 const CartState = createContext<CartContextValue | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const { totalItems, items }: any = useCart();
+  const path = window.location.pathname;
+  const lastSegment = path.split("/").filter(Boolean).pop();
 
   const [open, setOpen] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState<CurrentProduct[]>(items);
@@ -26,6 +29,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         setCartItems,
         cartItems,
         cartQuantity: totalItems,
+        lastSegment,
       }}
     >
       {children}
