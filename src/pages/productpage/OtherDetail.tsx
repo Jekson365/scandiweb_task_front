@@ -43,7 +43,7 @@ const OtherDetail = ({ attr }: { attr: CurrentProduct }) => {
             return (
               <>
                 <div
-                  data-testid={`product-attribute-${item.id_name}`}
+                  data-testid={`product-attribute-${item.id_name.toLocaleLowerCase()}`}
                   onClick={() => handleSelect(item)}
                   className={`radio-box ${
                     item.isSelected ? "selected-radio-box" : null

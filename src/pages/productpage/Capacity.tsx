@@ -25,7 +25,7 @@ const Capacity = ({ attr }: { attr: CurrentProduct }) => {
       <div className="row sizes">
         <>
           <div className="title">capacity</div>
-          <div className="sizes-container" data-testid={`product-attribute-${attr.id_name}`}>
+          <div className="sizes-container" data-testid={`product-attribute-${attr.id_name.toLocaleLowerCase()}`}>
             {attr.items.map((item: Item) => {
               return (
                 <>

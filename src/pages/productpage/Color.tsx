@@ -19,14 +19,11 @@ const Color = ({ attr }: { attr: CurrentProduct }) => {
 
     setCartObject({ ...cartObject, attributes: updatedAttributes });
   };
-  useEffect(()=> {
-    console.log(attr)
-  },[])
   return (
     <>
       <div className="row colors">
         <div className="title">Color:</div>
-        <div className="colors-container" data-testid={`product-attribute-${attr.id_name}`}>
+        <div className="colors-container" data-testid={`product-attribute-${attr.id_name.toLocaleLowerCase()}`}>
           {attr.items.map((item: Item) => {
             return (
               <div
