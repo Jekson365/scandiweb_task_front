@@ -116,19 +116,19 @@ const Productpage = () => {
                 {cartObject.attributes.map((attr: CurrentProduct) => {
                   return (
                     <>
-                      {attr.id_name === "Size" ? (
+                      {attr.id_name.toLocaleLowerCase() === "size" ? (
                         <>
                           <Size attr={attr} />
                         </>
-                      ) : attr.id_name === "Color" ? (
+                      ) : attr.id_name.toLocaleLowerCase() === "color" ? (
                         <>
                           <Color attr={attr} />
                         </>
-                      ) : attr.id_name === "Capacity" ? (
+                      ) : attr.id_name.toLocaleLowerCase() === "capacity" ? (
                         <>
                           <Capacity attr={attr} />
                         </>
-                      ) : attr.id_name !== "" ? (
+                      ) : attr.id_name.toLocaleLowerCase() !== "" ? (
                         <>
                           <OtherDetail attr={attr} />
                         </>

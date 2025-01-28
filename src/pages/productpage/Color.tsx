@@ -30,7 +30,7 @@ const Color = ({ attr }: { attr: CurrentProduct }) => {
           {attr.items.map((item: Item) => {
             return (
               <div
-              data-testid={`product-attribute-${item.id_name}`} 
+              data-testid={`product-attribute-color-${item.id_name}`} 
                 className={`color c-1 ${
                   item.isSelected ? "selected-color" : ""
                 }`}
