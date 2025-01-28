@@ -118,35 +118,19 @@ const Productpage = () => {
                     <>
                       {attr.id_name === "Size" ? (
                         <>
-                          <div
-                            data-testid={`product-attribute-${attr.id_name}`}
-                          >
-                            <Size attr={attr} />
-                          </div>
+                          <Size attr={attr} />
                         </>
                       ) : attr.id_name === "Color" ? (
                         <>
-                          <div
-                            data-testid={`product-attribute-${attr.id_name}`}
-                          >
-                            <Color attr={attr} />
-                          </div>
+                          <Color attr={attr} />
                         </>
                       ) : attr.id_name === "Capacity" ? (
                         <>
-                          <div
-                            data-testid={`product-attribute-${attr.id_name}`}
-                          >
-                            <Capacity attr={attr} />
-                          </div>
+                          <Capacity attr={attr} />
                         </>
                       ) : attr.id_name !== "" ? (
                         <>
-                          <div
-                            data-testid={`product-attribute-${attr.id_name}`}
-                          >
-                            <OtherDetail attr={attr} />
-                          </div>
+                          <OtherDetail attr={attr} />
                         </>
                       ) : null}
                     </>
